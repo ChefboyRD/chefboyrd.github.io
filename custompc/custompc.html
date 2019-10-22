@@ -2,28 +2,231 @@
 
 <html>
 	<head>
-		<title>ChefboyRD</title>
+		<title> Custom PC </title>
 		
 		<style>
+			body {
+				background-image: linear-gradient(to right, #fbc2eb 35%, #ffffff 50%);
+			}
 			
+			#left {
+				float: left;
+				display: inline-block;
+				
+				width: 40%;
+			}
+			
+			#rightDiv {
+				display: inline-block;
+				
+				float: right;
+				width: 60%;
+				
+				right: 0;
+				
+				position: fixed;
+			}
+			
+			#rightImage {
+				width: 50%;
+				
+				margin: auto;
+				
+				margin-top: 10%;
+			}
 		</style>
 		
 		<script>
+			function clearImage() {
+				document.getElementById("rightImage").innerHTML = "";
+			}
 			
+			function bodyLoaded() {
+				var rows = document.getElementById("table").rows;
+				
+				var x = rows.length;
+				
+				for (var i = 0, l = x; i < l; i++) {
+					rows[i].className = 'class' + ((i%2) + 1);
+				}
+				
+				var tr = document.getElementsByTagName("tr");
+				
+				for (var i = 0; i < tr.length; i++) {
+					tr[i].setAttribute("onmouseout", "clearImage()");
+				}
+			}
+			
+			function cpuHover() {
+				document.getElementById("rightImage").innerHTML = "<img src=\"images/cpu.jpg\" width=\"100%\">";
+			}
+			
+			function cpucoolerHover() {
+				document.getElementById("rightImage").innerHTML = "<img src=\"images/cpucooler.jpg\" width=\"100%\">";
+			}
+			
+			function motherboardHover() {
+				document.getElementById("rightImage").innerHTML = "<img src=\"images/motherboard.jpg\" width=\"100%\">";
+			}
+			
+			function memoryHover() {
+				document.getElementById("rightImage").innerHTML = "<img src=\"images/memory.jpg\" width=\"100%\">";
+			}
+			
+			function m2Hover() {
+				document.getElementById("rightImage").innerHTML = "<img src=\"images/m2.jpg\" width=\"100%\">";
+			}
+			
+			function ssdHover() {
+				document.getElementById("rightImage").innerHTML = "<img src=\"images/ssd.jpg\" width=\"100%\">";
+			}
+			
+			function videocardHover() {
+				document.getElementById("rightImage").innerHTML = "<img src=\"images/videocard.jpg\" width=\"100%\">";
+			}
+			
+			function caseHover() {
+				document.getElementById("rightImage").innerHTML = "<img src=\"images/case.jpg\" width=\"100%\">";
+			}
+			
+			function powersupplyHover() {
+				document.getElementById("rightImage").innerHTML = "<img src=\"images/powersupply.jpg\" width=\"100%\">";
+			}
+			
+			function cdbrHover() {
+				document.getElementById("rightImage").innerHTML = "<img src=\"images/cdbr.jpg\" width=\"100%\">";
+			}
+			
+			function cdHover() {
+				document.getElementById("rightImage").innerHTML = "<img src=\"images/cd.jpg\" width=\"100%\">";
+			}
+			
+			function osHover() {
+				document.getElementById("rightImage").innerHTML = "<img src=\"images/os.jpg\" width=\"100%\">";
+			}
 		</script>
 	</head>
 	
-	<body>
-		<h1> My Webpage Thing </h1>
-		
-		<h3> Links </h3>
+	<body onLoad="bodyLoaded()">
+		<div id="left">
+			<h1> Custom PC Build </h1>
 			
-		<p>
-			<a href="https://github.com/ChefboyRD?tab=repositories"> Github Repositories </a>
-			
+			<hr>
 			<br />
 			
-			<a href="custompc/custompc.html"> Custom PC Build </a>
-		<p>
+			<table id="table" class="pcpp-part-list" cellspacing="10">
+				<th>Type</th>
+				<th>Item</th>
+				<th>Price</th>
+			  
+				<tr onMouseOver="cpuHover()">
+				  <td class="pcpp-part-list-type">CPU</td>
+				  <td class="pcpp-part-list-item"><p>Intel Core i5-6500 3.2 GHz Quad-Core Processor</p></td>
+				  <td class="pcpp-part-list-price">
+					 <a href="https://pcpartpicker.com/product/xwhj4D/intel-cpu-bx80662i56500" target="_blank">$199.99</a,>
+				  </td>
+				</tr>
+				<tr onMouseOver="cpucoolerHover()">
+				  <td class="pcpp-part-list-type">CPU Cooler</td>
+				  <td class="pcpp-part-list-item"><p>Cooler Master Hyper 212 EVO 82.9 CFM Sleeve Bearing CPU Cooler</p></td>
+				  <td class="pcpp-part-list-price">
+					<a href="https://pcpartpicker.com/product/hmtCmG/cooler-master-cpu-cooler-rr212e20pkr2" target="_blank">$29.99</a>
+				  </td>
+				</tr>
+				<tr onMouseOver="motherboardHover()">
+				  <td class="pcpp-part-list-type">Motherboard</td>
+				  <td class="pcpp-part-list-item"><p>Asus STRIX Z270-E GAMING ATX LGA1151 Motherboard</p></td>
+				  <td class="pcpp-part-list-price">
+					<a href="https://www.amazon.com/ASRock-Z270-EXTREME4-CrossFireX-Motherboard/dp/B01NBEX0EK/ref=sr_1_1?keywords=Asus+STRIX+Z270-E+GAMING+ATX+LGA1151+Motherboard&qid=1571337949&sr=8-1" target="_blank">$159.99</a>
+				  </td>
+				</tr>
+				<tr onMouseOver="memoryHover()">
+				  <td class="pcpp-part-list-type">Memory</td>
+				  <td class="pcpp-part-list-item"><p>Corsair Vengeance LPX 16 GB (2 x 8 GB) DDR4-3000 Memory x2</p></td>
+				  <td class="pcpp-part-list-price">
+					<a href="https://pcpartpicker.com/product/MYH48d/corsair-memory-cmk16gx4m2b3000c15" target="_blank">$64.98</a>
+				  </td>
+				</tr>
+				<tr onMouseOver="m2Hover()">
+				  <td class="pcpp-part-list-type">Storage (M.2)</td>
+				  <td class="pcpp-part-list-item"><p>Intel 660p Series 512 GB M.2-2280 NVME Solid State Drive</p></td>
+				  <td class="pcpp-part-list-price">
+					<a href="https://pcpartpicker.com/product/6YtQzy/intel-660p-series-512gb-m2-2280-solid-state-drive-ssdpeknw512g8xt" target="_blank">$62.49</a>
+				  </td>
+				</tr>
+				<tr onMouseOver="ssdHover()">
+				  <td class="pcpp-part-list-type">Storage (SSD)</td>
+				  <td class="pcpp-part-list-item"><p>Samsung 860 Evo 1 TB 2.5" Solid State Drive</p></td>
+				  <td class="pcpp-part-list-price">
+					<a href="https://pcpartpicker.com/product/yzfhP6/samsung-860-evo-1tb-25-solid-state-drive-mz-76e1t0bam" target="_blank">$129.99</a>
+				  </td>
+				</tr>
+				<tr onMouseOver="videocardHover()">
+				  <td class="pcpp-part-list-type">Video Card</td>
+				  <td class="pcpp-part-list-item"><p>Asus GeForce GTX 1060 3GB 3 GB Dual Video Card</p></td>
+				  <td class="pcpp-part-list-price">
+					<a href="https://pcpartpicker.com/product/Kh38TW/asus-geforce-gtx-1060-3gb-dual-video-card-dual-gtx1060-o3g" target="_blank">$219.99</a>
+				  </td>
+				</tr>
+				<tr onMouseOver="caseHover()">
+				  <td class="pcpp-part-list-type">Case</td>
+				  <td class="pcpp-part-list-item"><p>Corsair 200R ATX Mid Tower Case</p></td>
+				  <td class="pcpp-part-list-price">
+					<a href="https://pcpartpicker.com/product/cTQypg/corsair-case-200r" target="_blank">$74.98</a>
+				  </td>
+				</tr>
+				<tr onMouseOver="powersupplyHover()">
+				  <td class="pcpp-part-list-type">Power Supply</td>
+				  <td class="pcpp-part-list-item"><p>Corsair CXM 550 W 80+ Bronze Certified Semi-modular ATX Power Supply</p></td>
+				  <td class="pcpp-part-list-price">
+					<a href="https://pcpartpicker.com/product/3hkwrH/corsair-power-supply-cp9020102na" target="_blank">$69.89</a>
+				  </td>
+				</tr>
+				<tr onMouseOver="cdbrHover()">
+				  <td class="pcpp-part-list-type">Optical Drive (+BR)</td>
+				  <td class="pcpp-part-list-item"><p>Sony BD-5300S Blu-Ray/DVD/CD Writer</p></td>
+				  <td class="pcpp-part-list-price">
+					  <a href="https://www.newegg.com/sony-bd-5300s-0b-internal-blu-ray-burner/p/N82E16827118050" target="_blank">OOS</a>
+				  </td>
+				</tr>
+				<tr onMouseOver="cdHover()">
+				  <td class="pcpp-part-list-type">Optical Drive</td>
+				  <td class="pcpp-part-list-item"><p>Sony 5280S-CB-PLUS DVD/CD Writer</p></td>
+				  <td class="pcpp-part-list-price">
+					<a href="https://pcpartpicker.com/product/sHH323/sony-optical-drive-5280scbplus" target="_blank">$129.99</a>
+				  </td>
+				</tr>
+				<tr onMouseOver="osHover()">
+				  <td class="pcpp-part-list-type">Operating System</td>
+				  <td class="pcpp-part-list-item"><p>Microsoft Windows 7 Ultimate SP1 OEM 64-bit</p></td>
+				  <td class="pcpp-part-list-price">
+					  <a href="https://www.amazon.com/Windows-Ultimate-System-Builder-Packaging/dp/B004Q0PTD8" target="_blank">$279.99</a>
+				  </td>
+				</tr>
+				
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				
+				<tr>
+				  <td></td>
+				  <td class="pcpp-part-list-total">Total</td>
+				  <td class="pcpp-part-list-total-price">$1422.27</td>
+				</tr>
+				<tr>
+				  <td></td>
+				  <td class="pcpp-part-list-price-note">Generated by <a href="https://pcpartpicker.com" target="_blank">PCPartPicker</a> 2019-10-15 16:33 EDT-0400</td>
+				  <td></td>
+				</tr>
+			</table>
+			
+			<p><a href="https://pcpartpicker.com/list/hx62Rk" target="_blank">https://pcpartpicker.com/list/hx62Rk</a></p>
+		</div>
+		
+		<div id="rightDiv">
+			<div id="rightImage">
+			</div>
+		</div>
 	</body>
 </html>
